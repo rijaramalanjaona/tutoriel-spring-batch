@@ -19,11 +19,12 @@ Projet :
 
 - création projet maven dans eclipse :
 	File > New > Maven Project > Create a simple maven project (skip archetype selection)
-	Renseigner <groupId>com.rija.dev</groupId>
-	<artifactId>tutoriel-spring-batch</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>tutoriel-spring-batch</name>
-	<description>Tutoriel spring batch</description>
+	Renseigner 
+	groupId : com.rija.dev
+	artifactId : tutoriel-spring-batch
+	version : 0.0.1-SNAPSHOT
+	name : tutoriel-spring-batch
+	description : Tutoriel spring batch
 	
 - ajouter dépendances maven
 spring-batch-infrastructure, spring-batch-core, spring
@@ -45,13 +46,14 @@ spring-batch-infrastructure, spring-batch-core, spring
 	- Ajouter le bean personDaoWriter dans batch-context.xml
 	
 - création du job dans batch-context.xml
-	<job id="importPersonnes" xmlns="http://www.springframework.org/schema/batch">
-		<step id="readWritePersonne">
-			<tasklet>
-				<chunk reader="personneReaderCSV" writer="personDaoWriter" processor="personProcessor" commit-interval="2" />
-			</tasklet>
-		</step>
-	</job>
+
+	<job id="importPersonnes" xmlns="http://www.springframework.org/schema/batch"
+		<step id="readWritePersonne
+			<tasklet
+				<chunk reader="personneReaderCSV" writer="personDaoWriter" processor="personProcessor" commit-interval="2" /
+			</tasklet
+		</step
+	</job
 	- Le job sera donc constitué d'un seul Step dont la tasklet est de type « Chunk ».
 
 	- Le chunk est un concept important dans Spring Batch qui définit l'enchainement qui va s'exécuter dans une transaction.
@@ -62,7 +64,7 @@ spring-batch-infrastructure, spring-batch-core, spring
 - Création d'une class BatchPersonne avec une méthode main pour lancer le batch
 	
 Ce qu'il faut ajouter en plus pour faire marcher le projet :
-	- pom.xml : 
+	- pom.xml :
 		- modifier la version de spring-batch-infrastructure et spring-batch-infrastructure en 2.1.8.RELEASE
 		- ajouter une dépendance vers le driver mysql
 		
@@ -75,7 +77,7 @@ Ce qu'il faut ajouter en plus pour faire marcher le projet :
 		- bean jobRepository
 		
 Lancement :
-	run configuration maven > 
+	run configuration maven 
 		- name : tutoriel-spring-batch
 		- base directory : ${workspace_loc:/tutoriel-spring-batch}
 		- goals : compile exec:java -Dexec.mainClass="com.rija.dev.BatchPersonne" -Dexec.cleanupDaemonThreads=false
