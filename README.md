@@ -1,10 +1,6 @@
 # tutoriel-spring-batch
 Spring batch  Tuto : http://jeremy-jeanne.developpez.com/tutoriels/spring/spring-batch/
 
-Spring batch
-
-Tuto : http://jeremy-jeanne.developpez.com/tutoriels/spring/spring-batch/
-
 - L'architecture de Spring-Batch est constituée de deux couches :
     - la couche Batch Core
     - la couche Batch Infrastructure.
